@@ -1,0 +1,75 @@
+html, body {
+	font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
+	font-weight: 400;
+}
+
+h1 {
+	text-align: center;
+	margin: 0px;
+}
+
+.container {
+	width: 94vw;
+	background: burlywood;
+}
+
+.inlineBlock {
+	display: inline-block;
+}
+
+.cardTable {
+	border:1px solid black;
+	margin-top:5px;
+}
+
+.cardWrap {
+	border: 1px solid black;
+	border-radius: .2em;
+	margin: 2px;
+	background-color: silver;
+}
+
+.card {
+	cursor: pointer;
+	font-size:1.2em;
+	width:13.9vw;
+	height: 8vh;
+	color: white;
+}
+
+.cardBack {
+	opacity: .0;
+}
+
+.hidden {
+	display: none;
+}
+
+.suit {
+	font-size:.6em;
+	overflow: wrap;
+}
+
+.color0{
+	background-color: black;
+}
+.color1{
+	background-color: red;
+}
+.color2{
+	background-color: rgb(255, 0, 95);
+}
+.color3{
+	background-color: #224;
+}
+
+.match{
+	background-color: green;
+}
+
+.stats{
+	font-size: 1.em;
+	margin-bottom: 5px;
+}
+
+
