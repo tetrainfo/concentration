@@ -62,22 +62,6 @@ export default class CardTable extends Component {
         return items;
     }
 
-    //filter experiment
-    getId = (items, id ) => {
-        return items.filter( (item) => item.id == id );
-    }
-
-    getElemId = (e) => {
-        //utility method to extract address id
-        let id = -1;
-        if (e.target.id) {
-            id = parseInt(e.target.id,10);
-        } else {
-            id = parseInt(e.target.parentElement.id,10);
-        }
-        return id;
-    }
-
     getLastPosition = ( itemStack ) => {
         var lastPosition
         if (itemStack.length == 0) {
@@ -112,9 +96,9 @@ export default class CardTable extends Component {
         }
     }
 
-    flip = e => {
+    flip = id => {
         let { items, itemStack, stats } = this.state;
-        const id = this.getElemId(e);
+       // const id = this.getElemId(e);
         //ignore this click if its on an already matched item. Invalid.
         if (items[id].matched==true){
             return
@@ -214,13 +198,12 @@ export default class CardTable extends Component {
     render({ }, { items, itemStack, stats }) {
         return (
             <div class="cardTable">
-                Card Table 
-                <button style="margin-left: 10px;" value="left" onClick={this.newGame}>New Game</button> 
+                <button style="margin-left: 10px; margin-top:5px;" value="left" onClick={this.newGame}>New Game</button> 
                 <div class="inlineBlock stats"> &nbsp; Flips: {stats.count} Points: {stats.points} Move: {itemStack.length} </div>
                 <div class="container">
                     { items.map( (item, idx) => ( 
-                        <div class="inlineBlock cardWrap">
-                            <div class={item.class} id={idx} onClick={this.flip}> 
+                        <div class="inlineBlock cardWrap raised">
+                            <div class={item.class} id={idx} onClick={() => this.flip(idx)}> 
                                 {item.position}
                                 <div class="suit">{item.suit}</div>
                             </div>

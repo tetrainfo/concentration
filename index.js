@@ -29,7 +29,7 @@ export default class App extends Component {
 			<div>
 				<h1>Concentration</h1>
 
-				<div>Click on one card, then another. Matched cards turn green. Next click will hide unmatched cards.</div>
+				<div class="smaller">Click on one card, then another. Matched cards turn green. Next click will hide unmatched cards.</div>
 				<CardTable/>
 
 				<h2>Steps <button class={displayNot} onClick={ this.open }>Open</button><button class={display} onClick={ this.close }>Close</button></h2>
